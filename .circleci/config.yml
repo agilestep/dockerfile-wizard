@@ -40,23 +40,23 @@ jobs:
 
     steps:
     - checkout
-
-      - run: bash scripts/generate.sh > Dockerfile
-
-      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-
-      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
-
-      - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG && sleep 10
-
-      - store_artifacts:
-          path: Dockerfile
-
-  test_image:
-    docker:
-      - image: $DOCKER_USERNAME/agileimage1:agileimage1tag
-        environment:
-          <<: *image_config
+#
+#      - run: bash scripts/generate.sh > Dockerfile
+#
+#      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+#
+#      - run: docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
+#
+#      - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG && sleep 10
+#
+#      - store_artifacts:
+#          path: Dockerfile
+#
+#  test_image:
+#    docker:
+#      - image: $DOCKER_USERNAME/agileimage1:agileimage1tag
+#        environment:
+#          <<: *image_config
 
 ##    steps:
 ##      - checkout
