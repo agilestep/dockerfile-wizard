@@ -4,9 +4,9 @@ image_config: &image_config
   # either as project-specific environment variables
   # or as resources in your organization's org-global Context
 
-  IMAGE_NAME: agilestepimage
+  IMAGE_NAME: agileimage1
 
-  IMAGE_TAG: agiletag
+  IMAGE_TAG: agileimage1tag
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
@@ -17,9 +17,9 @@ image_config: &image_config
 
   RUBY_VERSION_NUM: 2.3.1
 
-  NODE_VERSION_NUM: v0.6.9
+  NODE_VERSION_NUM: 0.1.100
 
-  PYTHON_VERSION_NUM: 2.7
+  # PYTHON_VERSION_NUM: # pick a version from https://python.org/ftp/python
 
   JAVA: false
 
@@ -27,7 +27,7 @@ image_config: &image_config
 
   POSTGRES_CLIENT: true
 
-  DOCKERIZE: true
+  DOCKERIZE: false
 
   BROWSERS: true
 
@@ -54,7 +54,7 @@ jobs:
 
   test_image:
     docker:
-      - image: $DOCKER_USERNAME/agilestepimage:agiletag
+      - image: $DOCKER_USERNAME/agileimage1:agileimage1tag
         environment:
           <<: *image_config
 
