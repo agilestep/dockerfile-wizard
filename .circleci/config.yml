@@ -47,9 +47,6 @@ jobs:
 
     - run: docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
 
-    - store_artifacts:
-        path: Dockerfile
-
 #  test_image:
 #    docker:
 #      - image: $DOCKER_USERNAME/agileimage1:agileimage1tag
